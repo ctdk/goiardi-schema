@@ -5,10 +5,10 @@ BEGIN;
 CREATE TABLE data_bag_items (
 	id int unsigned not null auto_increment,
 	name varchar(255) not null,
-	data_bag_id int unsigned,
+	data_bag_id int unsigned not null,
 	raw_data blob,
-	created_at datetime default null,
-	updated_at datetime default null,
+	created_at datetime not null,
+	updated_at datetime not null,
 	primary key(id),
 	FOREIGN KEY(data_bag_id)
 		REFERENCES data_bags(id)

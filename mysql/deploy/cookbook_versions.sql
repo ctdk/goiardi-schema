@@ -19,8 +19,8 @@ CREATE TABLE cookbook_versions (
 	templates blob,
 	root_files blob,
 	files blob,
-	created_at datetime default null,
-	updated_at datetime default null,
+	created_at datetime not null,
+	updated_at datetime not null,
 	PRIMARY KEY(id),
 	UNIQUE KEY(cookbook_id, major_ver, minor_ver, patch_ver),
 	FOREIGN KEY (cookbook_id)

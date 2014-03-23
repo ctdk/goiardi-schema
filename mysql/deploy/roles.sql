@@ -10,8 +10,8 @@ CREATE TABLE roles (
 	env_run_lists blob,
 	default_attr blob,
 	override_attr blob,
-	created_at datetime default null,
-	updated_at datetime default null,
+	created_at datetime not null,
+	updated_at datetime not null,
 	primary key(id),
 	unique key(name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;

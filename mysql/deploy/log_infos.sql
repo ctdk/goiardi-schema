@@ -4,12 +4,12 @@ BEGIN;
 
 CREATE TABLE log_infos (
 	id int unsigned not null auto_increment,
-	actor_id int unsigned,
+	actor_id int unsigned not null default 0,
 	actor_type enum ( 'user', 'client') NOT NULL,
 	time timestamp default current_timestamp,
 	action enum('create', 'delete', 'modify') not null,
-	object_type varchar(50),
-	object_id int unsigned,
+	object_type varchar(50) not null,
+	object_id int unsigned not null,
 	extended_info text,
 	primary key(id),
 	index(actor_id),
