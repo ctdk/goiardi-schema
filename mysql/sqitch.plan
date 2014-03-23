@@ -6,3 +6,5 @@ environments 2014-03-23T01:26:40Z Jeremy Bingham <jbingham@gmail.com> # Create e
 nodes 2014-03-23T01:29:02Z Jeremy Bingham <jbingham@gmail.com> # Create nodes table
 clients 2014-03-23T01:33:31Z Jeremy Bingham <jbingham@gmail.com> # Create clients table
 users 2014-03-23T01:35:37Z Jeremy Bingham <jbingham@gmail.com> # Create users table
+cookbooks 2014-03-23T01:39:20Z Jeremy Bingham <jbingham@gmail.com> # Create cookbooks table
+cookbook_versions 2014-03-23T01:41:15Z Jeremy Bingham <jbingham@gmail.com> # Create cookbook versions table
