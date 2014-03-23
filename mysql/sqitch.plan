@@ -8,3 +8,5 @@ clients 2014-03-23T01:33:31Z Jeremy Bingham <jbingham@gmail.com> # Create client
 users 2014-03-23T01:35:37Z Jeremy Bingham <jbingham@gmail.com> # Create users table
 cookbooks 2014-03-23T01:39:20Z Jeremy Bingham <jbingham@gmail.com> # Create cookbooks table
 cookbook_versions 2014-03-23T01:41:15Z Jeremy Bingham <jbingham@gmail.com> # Create cookbook versions table
+data_bags 2014-03-23T01:43:55Z Jeremy Bingham <jbingham@gmail.com> # Create data_bags table
+data_bag_items 2014-03-23T01:45:12Z Jeremy Bingham <jbingham@gmail.com> # Create data bag items table
