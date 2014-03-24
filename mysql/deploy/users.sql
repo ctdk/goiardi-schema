@@ -8,6 +8,7 @@ CREATE TABLE users (
 	name varchar(1024),
 	email varchar(255),
 	admin tinyint(4) default 0,
+	public_key text,
 	passwd varchar(128),
 	salt varbinary(64),
 	created_at datetime not null,
