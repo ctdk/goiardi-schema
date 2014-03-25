@@ -14,5 +14,6 @@ CREATE TABLE environments (
 	PRIMARY KEY(id),
 	UNIQUE KEY(name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+INSERT INTO environments (id, name, description, created_at, updated_at) VALUES (1, "_default", "The default Chef environment", NOW(), NOW());
 
 COMMIT;

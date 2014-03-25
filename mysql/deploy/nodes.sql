@@ -5,7 +5,8 @@ BEGIN;
 CREATE TABLE nodes (
 	id int unsigned not null auto_increment,
 	name varchar(255) not null,
-	environment_id int unsigned not null default 0,
+	environment_id int unsigned not null default 1,
+	run_list blob,
 	automatic_attr blob,
 	normal_attr blob,
 	default_attr blob,
