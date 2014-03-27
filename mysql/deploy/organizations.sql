@@ -3,7 +3,7 @@
 BEGIN;
 
 CREATE TABLE organizations (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	name varchar(255) not null,
 	description text,
 	created_at datetime not null,

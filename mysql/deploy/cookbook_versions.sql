@@ -3,11 +3,11 @@
 BEGIN;
 
 CREATE TABLE cookbook_versions (
-	id int unsigned not null auto_increment,
-	cookbook_id int unsigned not null,
-	major_ver bigint unsigned not null,
-	minor_ver bigint unsigned not null,
-	patch_ver bigint unsigned not null,
+	id int not null auto_increment,
+	cookbook_id int not null,
+	major_ver bigint not null,
+	minor_ver bigint not null,
+	patch_ver bigint not null,
 	frozen tinyint default 0,
 	metadata blob,
 	definitions blob,

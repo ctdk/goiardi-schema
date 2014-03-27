@@ -3,7 +3,7 @@
 BEGIN;
 
 CREATE TABLE data_bags (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	name varchar(255) not null,
 	created_at datetime not null,
 	updated_at datetime not null,

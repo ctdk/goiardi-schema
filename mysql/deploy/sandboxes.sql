@@ -3,7 +3,7 @@
 BEGIN;
 
 CREATE TABLE sandboxes (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	sbox_id varchar(32) not null,
 	creation_time datetime not null,
 	checksums blob,

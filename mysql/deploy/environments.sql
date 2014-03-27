@@ -3,7 +3,7 @@
 BEGIN;
 
 CREATE TABLE environments (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	name varchar(255) not null,
 	description text,
 	default_attr blob,

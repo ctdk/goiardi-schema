@@ -3,7 +3,7 @@
 BEGIN;
 
 CREATE TABLE users (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	username varchar(255) not null,
 	name varchar(1024),
 	email varchar(255),

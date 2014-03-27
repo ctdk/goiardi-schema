@@ -3,9 +3,9 @@
 BEGIN;
 
 CREATE TABLE data_bag_items (
-	id int unsigned not null auto_increment,
+	id int not null auto_increment,
 	name varchar(255) not null,
-	data_bag_id int unsigned not null,
+	data_bag_id int not null,
 	raw_data blob,
 	created_at datetime not null,
 	updated_at datetime not null,

@@ -3,8 +3,8 @@
 BEGIN;
 
 CREATE TABLE file_checksums (
-	id int unsigned not null auto_increment,
-	org_id int unsigned not null default 0,
+	id int not null auto_increment,
+	org_id int not null default 0,
 	checksum varchar(32),
 	primary key(id),
 	unique key(org_id, checksum)
