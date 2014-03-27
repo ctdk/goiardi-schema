@@ -15,3 +15,4 @@ sandboxes 2014-03-23T01:50:09Z Jeremy Bingham <jbingham@gmail.com> # Create sand
 log_infos 2014-03-23T01:59:02Z Jeremy Bingham <jbingham@gmail.com> # Create a log info table
 organizations 2014-03-23T02:01:19Z Jeremy Bingham <jbingham@gmail.com> # Create an organizations table. Not immediately useful for anything, but future-proofing just in case.
 file_checksums 2014-03-23T02:03:13Z Jeremy Bingham <jbingham@gmail.com> # Create file checksums table, for tracking uploaded file checksums (fancy that).
+env_del_trigger 2014-03-26T19:34:08Z Jeremy Bingham <jbingham@gmail.com> # Add a trigger to set an environment's nodes to the default when an environment is deleted
