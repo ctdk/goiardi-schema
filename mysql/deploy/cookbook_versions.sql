@@ -7,7 +7,8 @@ CREATE TABLE cookbook_versions (
 	cookbook_id int not null,
 	major_ver bigint not null,
 	minor_ver bigint not null,
-	patch_ver bigint not null,
+	patch_ver bigint not null default 0, -- the first two *must* be set,
+					     -- the third not necessarily
 	frozen tinyint default 0,
 	metadata blob,
 	definitions blob,
