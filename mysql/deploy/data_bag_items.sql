@@ -14,7 +14,7 @@ CREATE TABLE data_bag_items (
 	FOREIGN KEY(data_bag_id)
 		REFERENCES data_bags(id)
 		ON DELETE RESTRICT,
-	unique key(data_bag_id, name)
+	unique key(data_bag_id, name),
 	unique key(data_bag_id, orig_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
