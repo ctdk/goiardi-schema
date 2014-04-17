@@ -14,7 +14,7 @@ CREATE TABLE clients (
 	created_at datetime not null,
 	updated_at datetime not null,
 	primary key(id),
-	unique key(org_id, name(250))
+	unique key(organization_id, name(250))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 COMMIT;

@@ -14,7 +14,7 @@ CREATE TABLE users (
 	created_at datetime not null,
 	updated_at datetime not null,
 	primary key(id),
-	unique key(username),
+	unique key(name),
 	unique key(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
