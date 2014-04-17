@@ -4,8 +4,8 @@ BEGIN;
 
 CREATE TABLE users (
 	id int not null auto_increment,
-	username varchar(255) not null,
-	name varchar(1024),
+	name varchar(255) not null,
+	displayname varchar(1024),
 	email varchar(255),
 	admin tinyint(4) default 0,
 	public_key text,
