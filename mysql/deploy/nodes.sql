@@ -5,7 +5,7 @@ BEGIN;
 CREATE TABLE nodes (
 	id int not null auto_increment,
 	name varchar(255) not null,
-	environment_id int not null default 1,
+	chef_environment varchar(255) not null default "_default", 
 	run_list blob,
 	automatic_attr blob,
 	normal_attr blob,
@@ -15,9 +15,7 @@ CREATE TABLE nodes (
 	updated_at datetime not null,
 	primary key(id),
 	unique key(name),
-	key(environment_id) -- remove foreign key here; set default on delete
-			    -- with a trigger for MySQL; pg does the right thing
-			    -- apparently.
+	key(chef_environment)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 COMMIT;
