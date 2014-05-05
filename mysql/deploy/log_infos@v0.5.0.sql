@@ -2,7 +2,6 @@
 
 BEGIN;
 
-DROP TABLE log_infos;
 CREATE TABLE log_infos (
 	id int not null auto_increment,
 	actor_id int not null default 0,
