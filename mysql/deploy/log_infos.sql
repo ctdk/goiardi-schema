@@ -6,6 +6,7 @@ DROP TABLE log_infos;
 CREATE TABLE log_infos (
 	id int not null auto_increment,
 	actor_id int not null default 0,
+	actor_info text,
 	actor_type enum ( 'user', 'client') NOT NULL,
 	time timestamp default current_timestamp,
 	action enum('create', 'delete', 'modify') not null,
