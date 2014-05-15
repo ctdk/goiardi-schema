@@ -14,6 +14,8 @@ CREATE TABLE reports (
 	run_list blob,
 	resources blob,
 	data blob,
+	created_at datetime not null,
+	updated_at datetime not null,
 	primary key(id),
 	unique index(run_id),
 	index(organization_id),
