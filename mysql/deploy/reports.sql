@@ -10,7 +10,7 @@ CREATE TABLE reports (
 	start_time datetime,
 	end_time datetime,
 	total_res_count int default 0,
-	status enum("success", "failure"),
+	status enum("started", "success", "failure"),
 	run_list text,
 	resources blob,
 	data blob,
