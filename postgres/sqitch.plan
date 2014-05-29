@@ -3,3 +3,4 @@
 %uri=http://ctdk.github.com/goiardi/postgres-support
 
 goiardi_schema 2014-05-27T21:09:07Z Jeremy Bingham <jbingham@gmail.com> # Add schema for goiardi-postgres
+environments [goiardi_schema] 2014-05-29T07:40:11Z Jeremy Bingham <jbingham@gmail.com> # Environments for postgres
