@@ -4,3 +4,16 @@
 
 goiardi_schema 2014-05-27T21:09:07Z Jeremy Bingham <jbingham@gmail.com> # Add schema for goiardi-postgres
 environments [goiardi_schema] 2014-05-29T07:40:11Z Jeremy Bingham <jbingham@gmail.com> # Environments for postgres
+nodes [goiardi_schema] 2014-05-29T17:37:46Z Jeremy Bingham <jbingham@gmail.com> # Create node table
+clients [goiardi_schema] 2014-05-29T18:05:33Z Jeremy Bingham <jbingham@gmail.com> # Create client table
+users [goiardi_schema] 2014-05-29T18:15:02Z Jeremy Bingham <jbingham@gmail.com> # Create user table
+cookbooks [goiardi_schema] 2014-05-29T18:27:27Z Jeremy Bingham <jbingham@gmail.com> # Create cookbook  table
+cookbook_versions [cookbooks goiardi_schema] 2014-05-29T18:31:34Z Jeremy Bingham <jbingham@gmail.com> # Create cookbook versions table
+data_bags [goiardi_schema] 2014-05-29T18:42:04Z Jeremy Bingham <jbingham@gmail.com> # Create cookbook data bags table
+data_bag_items [data_bags goiardi_schema] 2014-05-29T19:02:31Z Jeremy Bingham <jbingham@gmail.com> # Create data bag items table
+roles [goiardi_schema] 2014-05-29T19:09:28Z Jeremy Bingham <jbingham@gmail.com> # Create roles table
+sandboxes [goiardi_schema] 2014-05-29T19:14:48Z Jeremy Bingham <jbingham@gmail.com> # Create sandboxes table
+log_infos [clients users goiardi_schema] 2014-05-29T19:19:10Z Jeremy Bingham <jbingham@gmail.com> # Create log_infos table
+organizations 2014-05-29T19:46:28Z Jeremy Bingham <jbingham@gmail.com> # Create organizations table
+file_checksums 2014-05-29T19:49:19Z Jeremy Bingham <jbingham@gmail.com> # Create file checksums table
+reports 2014-05-29T20:02:49Z Jeremy Bingham <jbingham@gmail.com> # Create reports table

@@ -10,8 +10,8 @@ CREATE TABLE goiardi.environments (
 	default_attr bytea,
 	override_attr bytea,
 	cookbook_vers bytea, -- make a blob for now, may bust out to a table
-	created_at timestamp not null,
-	updated_at timestamp not null,
+	created_at timestamp with time zone not null,
+	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
 	UNIQUE(name)
 );
