@@ -21,3 +21,5 @@ client_insert_duplicate [clients goiardi_schema] 2014-05-30T06:00:04Z Jeremy Bin
 client_rename [clients goiardi_schema] 2014-05-30T17:22:50Z Jeremy Bingham <jbingham@gmail.com> # Function to rename clients
 user_insert_duplicate [users goiardi_schema] 2014-05-30T20:07:46Z Jeremy Bingham <jbingham@gmail.com> # Function to emulate insert ... on duplicate update for clients
 user_rename [users goiardi_schema] 2014-05-30T20:15:45Z Jeremy Bingham <jbingham@gmail.com> # Function to rename users
+cookbook_insert_update [cookbooks goiardi_schema] 2014-05-31T06:55:23Z Jeremy Bingham <jbingham@gmail.com> # Cookbook insert/update
+cookbook_versions_insert_update [cookbook_versions goiardi_schema] 2014-05-31T06:56:05Z Jeremy Bingham <jbingham@gmail.com> # Cookbook versions insert/update
