@@ -11,7 +11,7 @@ CREATE TABLE goiardi.users (
 	admin boolean,
 	public_key text,
 	passwd varchar(128),
-	salt bit(64),
+	salt bytea,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),

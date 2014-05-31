@@ -18,3 +18,6 @@ organizations 2014-05-29T19:46:28Z Jeremy Bingham <jbingham@gmail.com> # Create 
 file_checksums 2014-05-29T19:49:19Z Jeremy Bingham <jbingham@gmail.com> # Create file checksums table
 reports 2014-05-29T20:02:49Z Jeremy Bingham <jbingham@gmail.com> # Create reports table
 client_insert_duplicate [clients goiardi_schema] 2014-05-30T06:00:04Z Jeremy Bingham <jbingham@gmail.com> # Function to emulate insert ... on duplicate update for clients
+client_rename [clients goiardi_schema] 2014-05-30T17:22:50Z Jeremy Bingham <jbingham@gmail.com> # Function to rename clients
+user_insert_duplicate [users goiardi_schema] 2014-05-30T20:07:46Z Jeremy Bingham <jbingham@gmail.com> # Function to emulate insert ... on duplicate update for clients
+user_rename [users goiardi_schema] 2014-05-30T20:15:45Z Jeremy Bingham <jbingham@gmail.com> # Function to rename users
