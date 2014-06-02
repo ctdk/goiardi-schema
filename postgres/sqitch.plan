@@ -25,3 +25,4 @@ cookbook_insert_update [cookbooks goiardi_schema] 2014-05-31T06:55:23Z Jeremy Bi
 cookbook_versions_insert_update [cookbook_versions goiardi_schema] 2014-05-31T06:56:05Z Jeremy Bingham <jbingham@gmail.com> # Cookbook versions insert/update
 data_bag_insert_update [data_bags goiardi_schema] 2014-06-01T06:25:44Z Jeremy Bingham <jbingham@gmail.com> # Insert/update data bags
 environment_insert_update [environments goiardi_schema] 2014-06-01T19:55:34Z Jeremy Bingham <jbingham@gmail.com> # Insert/update environments
+file_checksum_insert_ignore [file_checksums goiardi_schema] 2014-06-02T06:13:48Z Jeremy Bingham <jbingham@gmail.com> # Insert ignore for file checksums
