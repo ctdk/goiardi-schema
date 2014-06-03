@@ -10,7 +10,9 @@ BEGIN
     LOOP
         -- first try to update the key
 	UPDATE goiardi.environments SET description = m_description, default_attr = m_default_attr, override_attr = m_override_attr, cookbook_vers = m_cookbook_vers, updated_at = NOW() WHERE name = m_name;
-	RETURN;
+	IF found THEN
+		RETURN;
+	END IF;
         -- not there, so try to insert the key
         -- if someone else inserts the same key concurrently,
         -- we could get a unique-key failure

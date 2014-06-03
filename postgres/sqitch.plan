@@ -26,3 +26,8 @@ cookbook_versions_insert_update [cookbook_versions goiardi_schema] 2014-05-31T06
 data_bag_insert_update [data_bags goiardi_schema] 2014-06-01T06:25:44Z Jeremy Bingham <jbingham@gmail.com> # Insert/update data bags
 environment_insert_update [environments goiardi_schema] 2014-06-01T19:55:34Z Jeremy Bingham <jbingham@gmail.com> # Insert/update environments
 file_checksum_insert_ignore [file_checksums goiardi_schema] 2014-06-02T06:13:48Z Jeremy Bingham <jbingham@gmail.com> # Insert ignore for file checksums
+node_insert_update [nodes goiardi_schema] 2014-06-02T06:25:20Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for nodes
+report_insert_update [reports goiardi_schema] 2014-06-02T17:10:25Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for reports
+role_insert_update [roles goiardi_schema] 2014-06-02T17:27:32Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for roles
+sandbox_insert_update [sandboxes goiardi_schema] 2014-06-02T17:34:39Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for sandboxes
+data_bag_item_insert [data_bag_items data_bags goiardi_schema] 2014-06-02T21:03:22Z Jeremy Bingham <jbingham@gmail.com> # Insert for data bag items
