@@ -23,4 +23,4 @@ deploy the goiardi schema and configure goiardi to use PostgreSQL.
 [sqitch MySQL tutorial]:https://metacpan.org/pod/sqitchtutorial-mysql
 [MySQL mode README section]:https://github.com/ctdk/goiardi#mysql-mode
 [sqitch Postgres tutorial]:https://metacpan.org/pod/sqitchtutorial
-[Postgres mode README section]:https://github.com/ctdk/goiardi#mysql-mode
+[Postgres mode README section]:https://github.com/ctdk/goiardi#postgres-mode
