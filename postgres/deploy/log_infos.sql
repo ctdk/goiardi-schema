@@ -25,6 +25,7 @@ CREATE INDEX log_infos_actor ON goiardi.log_infos(actor_id);
 CREATE INDEX log_infos_action ON goiardi.log_infos(action);
 CREATE INDEX log_infos_obj ON goiardi.log_infos(object_type, object_name);
 CREATE INDEX log_infos_time ON goiardi.log_infos(time);
+CREATE INDEX log_info_orgs ON goiardi.log_infos(organization_id);
 ALTER TABLE goiardi.log_infos ALTER extended_info SET STORAGE EXTERNAL;
 
 COMMIT;

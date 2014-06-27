@@ -2,6 +2,6 @@
 
 BEGIN;
 
-SELECT id, name, created_at, updated_at FROM goiardi.data_bags WHERE FALSE;
+SELECT id, name, organization_id, created_at, updated_at FROM goiardi.data_bags WHERE FALSE;
 
 ROLLBACK;

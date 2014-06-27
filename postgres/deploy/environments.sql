@@ -6,6 +6,7 @@ BEGIN;
 CREATE TABLE goiardi.environments (
 	id bigserial,
 	name text,
+	organization_id bigint not null default 1,
 	description text,
 	default_attr bytea,
 	override_attr bytea,
@@ -13,7 +14,7 @@ CREATE TABLE goiardi.environments (
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
-	UNIQUE(name)
+	UNIQUE(organization_id, name)
 );
 ALTER TABLE goiardi.environments ALTER default_attr SET STORAGE EXTERNAL;
 ALTER TABLE goiardi.environments ALTER override_attr SET STORAGE EXTERNAL;

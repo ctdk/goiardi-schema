@@ -6,6 +6,7 @@ BEGIN;
 CREATE TABLE goiardi.roles (
 	id bigserial,
 	name text not null,
+	organization_id bigint not null default 1,
 	description text,
 	run_list bytea,
 	env_run_lists bytea,
@@ -14,7 +15,7 @@ CREATE TABLE goiardi.roles (
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),
-	unique(name)
+	unique(organization_id, name)
 );
 
 ALTER TABLE goiardi.roles ALTER run_list SET STORAGE EXTERNAL;

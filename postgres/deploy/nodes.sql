@@ -6,6 +6,7 @@ BEGIN;
 CREATE TABLE goiardi.nodes (
 	id bigserial,
 	name text not null,
+	organization_id bigint not null default 1,
 	chef_environment text not null default '_default', 
 	run_list bytea,
 	automatic_attr bytea,
@@ -15,7 +16,7 @@ CREATE TABLE goiardi.nodes (
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
-	UNIQUE(name)
+	UNIQUE(organization_id, name)
 );
 
 CREATE INDEX nodes_chef_env ON goiardi.nodes(chef_environment);
