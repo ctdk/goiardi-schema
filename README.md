@@ -11,8 +11,16 @@ The MySQL schema is used in goiardi as of version 0.5.0. The
 [MySQL mode README section][] in goiardi explains how to use sqitch to deploy the
 goiardi schema and configure goiardi to use MySQL.
 
+The Postgres schema is used in goiardi as of version 0.6.0. The
+[sqitch Postgres tutorial][] explains how to set up and use sqitch for Postgres, 
+and the [Postgres mode README section][] in goiardi explains how to use sqitch to
+deploy the goiardi schema and configure goiardi to use PostgreSQL.
+
+
 [goiardi]:https://github.com/ctdk/goiardi
 [sqitch]:http://sqitch.org
 [chef-server-schema]:https://github.com/opscode/chef-server-schema
 [sqitch MySQL tutorial]:https://metacpan.org/pod/sqitchtutorial-mysql
 [MySQL mode README section]:https://github.com/ctdk/goiardi#mysql-mode
+[sqitch Postgres tutorial]:https://metacpan.org/pod/sqitchtutorial
+[Postgres mode README section]:https://github.com/ctdk/goiardi#mysql-mode

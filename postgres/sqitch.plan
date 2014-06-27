@@ -31,3 +31,4 @@ report_insert_update [reports goiardi_schema] 2014-06-02T17:10:25Z Jeremy Bingha
 role_insert_update [roles goiardi_schema] 2014-06-02T17:27:32Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for roles
 sandbox_insert_update [sandboxes goiardi_schema] 2014-06-02T17:34:39Z Jeremy Bingham <jbingham@gmail.com> # Insert/update for sandboxes
 data_bag_item_insert [data_bag_items data_bags goiardi_schema] 2014-06-02T21:03:22Z Jeremy Bingham <jbingham@gmail.com> # Insert for data bag items
+@v0.6.0 2014-06-27T07:20:56Z Jeremy Bingham <jbingham@gmail.com> # Tag v0.6.0 for release
