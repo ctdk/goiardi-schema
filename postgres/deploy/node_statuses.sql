@@ -14,5 +14,6 @@ CREATE TABLE goiardi.node_statuses (
 		ON DELETE CASCADE
 );
 CREATE INDEX node_status_status ON goiardi.node_statuses(status);
+CREATE INDEX node_status_time ON goiardi.node_statuses(updated_at);
 
 COMMIT;
