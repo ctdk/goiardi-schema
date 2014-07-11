@@ -10,6 +10,7 @@ CREATE TABLE node_statuses (
 	updated_at datetime not null,
 	PRIMARY KEY(id),
 	INDEX(status),
+	INDEX(updated_at),
 	FOREIGN KEY(node_id)
 		REFERENCES nodes(id)
 		ON DELETE CASCADE
