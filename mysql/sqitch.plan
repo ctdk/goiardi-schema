@@ -25,3 +25,4 @@ all_org_ids 2014-06-27T00:18:00Z Jeremy Bingham <jbingham@gmail.com> # All relev
 @v0.6.0 2014-06-27T07:19:42Z Jeremy Bingham <jbingham@gmail.com> # Tag v0.6.0 for release
 
 node_statuses [nodes] 2014-07-11T06:12:45Z Jeremy Bingham <jeremy@terqa.local> # Create node_status table for node statuses, in mysql this time
+add_down_column_nodes [nodes] 2014-07-16T03:25:34Z Jeremy Bingham <jbingham@gmail.com># Add is_down column for mysql nodes
