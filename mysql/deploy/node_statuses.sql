@@ -6,7 +6,7 @@ BEGIN;
 CREATE TABLE node_statuses (
 	id int not null auto_increment,
 	node_id int not null,
-	status varchar(50) not null,
+	status enum('new', 'up', 'down') not null default 'new',
 	updated_at datetime not null,
 	PRIMARY KEY(id),
 	INDEX(status),

@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP FUNCTION goiardi.insert_node_status(m_name text, m_status varchar(50);
+DROP FUNCTION goiardi.insert_node_status(m_name text, m_status goiardi.status_node);
 
 COMMIT;

@@ -3,7 +3,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION goiardi.insert_node_status(m_name text, m_status varchar(50)) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION goiardi.insert_node_status(m_name text, m_status goiardi.status_node) RETURNS VOID AS
 $$
 DECLARE
 	n BIGINT;
