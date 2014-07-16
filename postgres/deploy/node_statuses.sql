@@ -3,10 +3,11 @@
 
 BEGIN;
 
+CREATE TYPE goiardi.status_node AS ENUM ( 'new', 'up', 'down' );
 CREATE TABLE goiardi.node_statuses (
 	id bigserial,
 	node_id bigint not null,
-	status varchar(50) not null,
+	status goiardi.status_node not null default 'new',
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
 	FOREIGN KEY(node_id)
