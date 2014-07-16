@@ -38,3 +38,4 @@ joined_cookbkook_version 2014-07-20T10:21:28Z Jeremy Bingham <jbingham@gmail.com
 @v0.7.0 2014-07-21T06:04:53Z Jeremy Bingham <jeremy@terqa.local> # Tag 0.7.0 postgres schema
 node_statuses [nodes] 2014-07-11T06:01:54Z Jeremy Bingham <jeremy@terqa.local> # Create node_status table for node statuses
 node_status_insert [node_statuses] 2014-07-11T07:01:31Z Jeremy Bingham <jeremy@terqa.local> # insert function for node_statuses
+add_down_column_nodes [nodes] 2014-07-16T03:18:05Z Jeremy Bingham <jbingham@gmail.com># Add is_down column to the nodes table

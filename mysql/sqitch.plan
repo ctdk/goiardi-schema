@@ -28,3 +28,4 @@ joined_cookbook_version 2014-07-20T10:33:16Z Jeremy Bingham <jbingham@gmail.com>
 grow_json_columns 2014-07-20T10:37:32Z Jeremy Bingham <jbingham@gmail.com> # A bunch of columns need to grow with the switch from gob encoded stuff in the db to json encoded
 @v0.7.0 2014-07-21T06:06:35Z Jeremy Bingham <jeremy@terqa.local> # Tag 0.7.0 mysql schema
 node_statuses [nodes] 2014-07-11T06:12:45Z Jeremy Bingham <jeremy@terqa.local> # Create node_status table for node statuses, in mysql this time
+add_down_column_nodes [nodes] 2014-07-16T03:25:34Z Jeremy Bingham <jbingham@gmail.com># Add is_down column for mysql nodes
