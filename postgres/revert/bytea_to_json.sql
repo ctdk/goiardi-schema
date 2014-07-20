@@ -214,5 +214,3 @@ $$
 LANGUAGE plpgsql;
 
 COMMIT;
-
-COMMIT;
