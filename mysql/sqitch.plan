@@ -26,3 +26,4 @@ all_org_ids 2014-06-27T00:18:00Z Jeremy Bingham <jbingham@gmail.com> # All relev
 
 joined_cookbook_version 2014-07-20T10:33:16Z Jeremy Bingham <jbingham@gmail.com> # a convenient view for joined versions for cookbook versions, adapted from erchef's joined_cookbook_version - MySQL version
 grow_json_columns 2014-07-20T10:37:32Z Jeremy Bingham <jbingham@gmail.com> # A bunch of columns need to grow with the switch from gob encoded stuff in the db to json encoded
+@v0.7.0 2014-07-21T06:06:35Z Jeremy Bingham <jeremy@terqa.local> # Tag 0.7.0 mysql schema
