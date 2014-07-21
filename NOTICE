@@ -6,3 +6,7 @@ Contributors and Copyright holders:
 * Copyright 2013-2014, Jeremy Bingham <jbingham@gmail.com>
 
 Many thanks to the folks at Opscode and the various authors of Chef.
+
+The joined_cookbook_version view in both the MySQL and Postgres schemas is
+adapted from the version found in the chef-server-schema repo, copyright Chef
+Inc.
