@@ -12,6 +12,7 @@ CREATE OR REPLACE VIEW goiardi.node_latest_statuses(
 	normal_attr,
 	default_attr,
 	override_attr,
+	is_down,
 	status,
 	updated_at)
 AS
@@ -24,6 +25,7 @@ SELECT DISTINCT ON (n.id)
 	n.normal_attr,
 	n.default_attr,
 	n.override_attr,
+	n.is_down,
 	ns.status,
 	ns.updated_at
 	FROM goiardi.nodes n INNER JOIN goiardi.node_statuses ns ON n.id = ns.node_id
