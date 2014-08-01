@@ -23,6 +23,9 @@ CREATE TABLE goiardi.shovey_runs (
 	status text,
 	ack_time timestamp with time zone not null,
 	end_time timestamp with time zone not null,
+	output text,
+	err_msg text,
+	exit_status smallint,
 	primary key(id)
 );
 
