@@ -41,3 +41,4 @@ node_status_insert [node_statuses] 2014-07-11T07:01:31Z Jeremy Bingham <jeremy@t
 add_down_column_nodes [nodes] 2014-07-16T03:18:05Z Jeremy Bingham <jbingham@gmail.com># Add is_down column to the nodes table
 shovey 2014-07-16T05:07:12Z Jeremy Bingham <jeremy@terqa.local> # add shovey tables
 node_latest_statuses [node_statuses] 2014-07-26T20:32:02Z Jeremy Bingham <jbingham@gmail.com> # Add a view to easily get nodes by their latest status
+shovey_insert_update [shovey] 2014-08-27T07:46:20Z Jeremy Bingham <jbingham@gmail.com> # insert/update functions for shovey
