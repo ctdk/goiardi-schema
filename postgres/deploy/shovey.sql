@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE TYPE goiardi.shovey_output AS ENUM ( 'stdout', 'stderr', 'both' );
+CREATE TYPE goiardi.shovey_output AS ENUM ( 'stdout', 'stderr' );
 
 CREATE TABLE goiardi.shoveys (
 	id bigserial,
