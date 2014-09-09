@@ -9,7 +9,7 @@ CREATE TABLE goiardi.shoveys (
 	run_id uuid not null,
 	command text,
 	status text,
-	timeout int default 300,
+	timeout bigint default 300,
 	quorum varchar(25) default '100%',
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,

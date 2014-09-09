@@ -3,7 +3,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION goiardi.merge_shoveys(m_run_id uuid, m_command text, m_status text, m_timeout int, m_quorum varchar(25)) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION goiardi.merge_shoveys(m_run_id uuid, m_command text, m_status text, m_timeout bigint, m_quorum varchar(25)) RETURNS VOID AS
 $$
 BEGIN
     LOOP
