@@ -57,5 +57,6 @@ CREATE INDEX shovey_run_node_name ON goiardi.shovey_runs(node_name);
 CREATE INDEX shovey_run_status ON goiardi.shovey_runs(status);
 CREATE INDEX shovey_uuid_node ON goiardi.shovey_runs(shovey_uuid, node_name);
 CREATE INDEX shovey_stream ON goiardi.shovey_run_streams(shovey_run_id, output_type);
+CREATE INDEX shovey_stream_seq ON goiardi.shovey_run_streams(shovey_run_id, output_type, seq);
 
 COMMIT;
