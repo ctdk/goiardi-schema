@@ -13,6 +13,7 @@ CREATE TABLE goiardi.shoveys (
 	quorum varchar(25) default '100%',
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
+	organization_id bigint not null default 1,
 	primary key(id),
 	unique(run_id)
 );
@@ -52,6 +53,8 @@ CREATE TABLE goiardi.shovey_run_streams (
 );
 
 CREATE INDEX shoveys_status ON goiardi.shoveys(status);
+CREATE INDEX shovey_organization_id ON goiardi.shoveys(organization_id);
+CREATE INDEX shovey_organization_run_id ON goiardi.shoveys(run_id, organization_id);
 CREATE INDEX shovey_run_run_id ON goiardi.shovey_runs(shovey_uuid);
 CREATE INDEX shovey_run_node_name ON goiardi.shovey_runs(node_name);
 CREATE INDEX shovey_run_status ON goiardi.shovey_runs(status);
