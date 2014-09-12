@@ -30,3 +30,4 @@ grow_json_columns 2014-07-20T10:37:32Z Jeremy Bingham <jbingham@gmail.com> # A b
 node_statuses [nodes] 2014-07-11T06:12:45Z Jeremy Bingham <jeremy@terqa.local> # Create node_status table for node statuses, in mysql this time
 add_down_column_nodes [nodes] 2014-07-16T03:25:34Z Jeremy Bingham <jbingham@gmail.com># Add is_down column for mysql nodes
 shovey 2014-09-10T06:42:15Z Jeremy Bingham <jbingham@gmail.com> # shovey tables for mysql
+node_latest_statuses 2014-09-10T17:15:10Z Jeremy Bingham <jbingham@gmail.com> # node latest status view
