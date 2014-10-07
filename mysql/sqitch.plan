@@ -31,3 +31,4 @@ node_statuses [nodes] 2014-07-11T06:12:45Z Jeremy Bingham <jeremy@terqa.local> #
 add_down_column_nodes [nodes] 2014-07-16T03:25:34Z Jeremy Bingham <jbingham@gmail.com># Add is_down column for mysql nodes
 shovey 2014-09-10T06:42:15Z Jeremy Bingham <jbingham@gmail.com> # shovey tables for mysql
 node_latest_statuses 2014-09-10T17:15:10Z Jeremy Bingham <jbingham@gmail.com> # node latest status view
+@v0.8.0 2014-09-25T04:18:46Z Jeremy Bingham <jbingham@gmail.com> # Tag 0.8.0 for release
