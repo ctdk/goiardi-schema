@@ -45,3 +45,4 @@ shovey_insert_update [shovey] 2014-08-27T07:46:20Z Jeremy Bingham <jbingham@gmai
 @v0.8.0 2014-09-25T04:17:41Z Jeremy Bingham <jbingham@gmail.com> # Tag v0.8.0
 
 ltree 2015-04-11T06:21:26Z Jeremy Bingham <jeremy@goiardi.gl> # Add tables for ltree search for postgres
+ltree_del_col 2015-04-12T19:33:15Z Jeremy Bingham <jeremy@goiardi.gl> # procedure for deleting search collections
