@@ -15,6 +15,7 @@ CREATE TABLE goiardi.search_items (
 	id bigserial,
 	organization_id bigint not null default 1,
 	search_collection_id bigint not null,
+	item_name text,
 	value text,
 	path ltree,
 	PRIMARY KEY(id),
@@ -29,5 +30,6 @@ CREATE INDEX search_org_id ON goiardi.search_items(organization_id);
 CREATE INDEX search_org_col ON goiardi.search_items(organization_id, search_collection_id);
 CREATE INDEX search_gist_idx ON goiardi.search_items USING gist (path);
 CREATE INDEX search_btree_idx ON goiardi.search_items USING btree(path);
+CREATE INDEX search_org_col_name ON goiardi.search_items(organization_id, search_collection_id, item_name);
 
 COMMIT;
