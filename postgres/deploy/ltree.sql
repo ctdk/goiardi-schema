@@ -2,6 +2,7 @@
 
 BEGIN;
 CREATE EXTENSION ltree;
+CREATE EXTENSION pg_trgm;
 
 CREATE TABLE goiardi.search_collections (
 	id bigserial,
@@ -31,5 +32,7 @@ CREATE INDEX search_org_col ON goiardi.search_items(organization_id, search_coll
 CREATE INDEX search_gist_idx ON goiardi.search_items USING gist (path);
 CREATE INDEX search_btree_idx ON goiardi.search_items USING btree(path);
 CREATE INDEX search_org_col_name ON goiardi.search_items(organization_id, search_collection_id, item_name);
+CREATE INDEX search_item_val_trgm ON goiardi.search_items USING gist (value gist_tgrm_ops);
+CREATE INDEX search_multi_gist_idx ON goiardi.search_items USING gist (path, value gist_trgm_ops);
 
 COMMIT;
