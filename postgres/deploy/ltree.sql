@@ -1,8 +1,8 @@
 -- Deploy ltree
 
 BEGIN;
-CREATE EXTENSION ltree;
-CREATE EXTENSION pg_trgm;
+CREATE EXTENSION ltree SCHEMA goiardi;
+CREATE EXTENSION pg_trgm SCHEMA goiardi;
 
 CREATE TABLE goiardi.search_collections (
 	id bigserial,
@@ -18,7 +18,7 @@ CREATE TABLE goiardi.search_items (
 	search_collection_id bigint not null,
 	item_name text,
 	value text,
-	path ltree,
+	path goiardi.ltree,
 	PRIMARY KEY(id),
 	FOREIGN KEY (search_collection_id)
 		REFERENCES goiardi.search_collections(id)
