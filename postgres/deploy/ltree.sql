@@ -34,5 +34,6 @@ CREATE INDEX search_btree_idx ON goiardi.search_items USING btree(path);
 CREATE INDEX search_org_col_name ON goiardi.search_items(organization_id, search_collection_id, item_name);
 CREATE INDEX search_item_val_trgm ON goiardi.search_items USING gist (value goiardi.gist_trgm_ops);
 CREATE INDEX search_multi_gist_idx ON goiardi.search_items USING gist (path, value goiardi.gist_trgm_ops);
+CREATE INDEX search_val ON goiardi.search_items(value);
 
 COMMIT;
