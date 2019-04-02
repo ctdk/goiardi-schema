@@ -51,3 +51,5 @@ ltree_del_item 2015-04-12T20:03:50Z Jeremy Bingham <jeremy@goiardi.gl> # procedu
 
 jsonb 2016-09-09T08:17:31Z Jeremy Bingham <jeremy@eridu.local> # Switch from json to jsonb columns. Will require using postgres 9.4+.
 @v0.11.0 2016-10-24T08:35:53Z Jeremy Bingham <jeremy@goiardi.gl> # tag the 0.11.0 release schema
+
+goiardi_10_schemas 2019-04-02T15:06:57Z Jeremy Bingham <jeremy@eridu.local.tld> # Finally! Taking the steps to set up the schema changes for goiardi 1.0.0 and orgs.
