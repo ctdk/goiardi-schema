@@ -53,3 +53,4 @@ jsonb 2016-09-09T08:17:31Z Jeremy Bingham <jeremy@eridu.local> # Switch from jso
 @v0.11.0 2016-10-24T08:35:53Z Jeremy Bingham <jeremy@goiardi.gl> # tag the 0.11.0 release schema
 
 goiardi_10_schemas 2019-04-02T15:06:57Z Jeremy Bingham <jeremy@eridu.local.tld> # Finally! Taking the steps to set up the schema changes for goiardi 1.0.0 and orgs.
+per_org_search 2019-04-24T15:21:04Z Jeremy Bingham <jeremy@eridu.local> # Dropping the search tables, and creating a base schema to use to create search tables for each org. Also pare down the indices used on the search tables.
