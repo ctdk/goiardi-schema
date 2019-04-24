@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+CREATE SCHEMA goiardi_search_base;
 
 COMMIT;
