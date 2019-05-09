@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION goiardi.merge_orgs(m_name text, m_description text, ) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION goiardi.merge_orgs(m_name text, m_description text) RETURNS VOID AS
 $$
 BEGIN
     LOOP

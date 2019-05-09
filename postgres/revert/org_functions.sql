@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+DROP FUNCTION goiardi.merge_orgs(m_name text, m_description text);
 
 COMMIT;
