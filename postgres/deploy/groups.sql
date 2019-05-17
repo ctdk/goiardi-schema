@@ -24,7 +24,6 @@ CREATE TABLE goiardi.groups (
 );
 
 -- Rename groups function
-BEGIN;
 
 CREATE OR REPLACE FUNCTION goiardi.rename_group(old_name text, new_name text, m_organization_id int) RETURNS VOID AS
 $$

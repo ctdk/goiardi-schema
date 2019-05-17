@@ -52,7 +52,8 @@ ltree_del_item 2015-04-12T20:03:50Z Jeremy Bingham <jeremy@goiardi.gl> # procedu
 jsonb 2016-09-09T08:17:31Z Jeremy Bingham <jeremy@eridu.local> # Switch from json to jsonb columns. Will require using postgres 9.4+.
 @v0.11.0 2016-10-24T08:35:53Z Jeremy Bingham <jeremy@goiardi.gl> # tag the 0.11.0 release schema
 
-goiardi_10_schemas 2019-04-02T15:06:57Z Jeremy Bingham <jeremy@eridu.local.tld> # Finally! Taking the steps to set up the schema changes for goiardi 1.0.0 and orgs.
 per_org_search 2019-04-24T15:21:04Z Jeremy Bingham <jeremy@eridu.local> # Dropping the search tables, and creating a base schema to use to create search tables for each org. Also pare down the indices used on the search tables.
 org_functions 2019-04-30T15:37:41Z Jeremy Bingham <jeremy@eridu.local.tld> # Orgs need the usual postgres functions to get the INSERT ... ON DUPLICATE KEY UPDATE functionality in MySQL.
 groups 2019-04-30T15:38:39Z Jeremy Bingham <jeremy@eridu.local.tld> # Groups need to be added to SQL too.
+clone_schema 2019-05-17T02:07:18Z Jeremy Bingham <jeremy@eridu.local.tld> # Add a clone_schema function to copy the search tables out of the goiardi_search_base schema into the per-org search schemas.
+drop_search_schema 2019-05-17T02:10:29Z Jeremy Bingham <jeremy@eridu.local.tld> # Function to simplify dropping unneeded org search schemas.
