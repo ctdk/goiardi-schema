@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION drop_search_schema(search_schema text) RETURNS void AS
+CREATE OR REPLACE FUNCTION goiardi.drop_search_schema(search_schema text) RETURNS void AS
 $$
 
 BEGIN
