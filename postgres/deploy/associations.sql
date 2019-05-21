@@ -3,6 +3,7 @@
 BEGIN;
 
 CREATE TYPE goiardi.association_req_status AS ENUM ('pending', 'accepted', 'rejected');
+CREATE TYPE goiardi.association_req_inviter AS ENUM ('users', 'clients');
 
 CREATE TABLE goiardi.associations(
 	id bigserial,
@@ -22,11 +23,14 @@ CREATE TABLE goiardi.association_requests(
 	user_id bigint,
 	organization_id bigint,
 	inviter_id bigint,
+	inviter_type goiardi.association_req_inviter,
 	status goiardi.association_req_status default 'pending',
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),
-	unique(user_id, organization_id, inviter_id)
+	-- I'm starting to wonder a little bit if this index is too ridonk for
+	-- words.
+	unique(user_id, organization_id, inviter_id, inviter_type)
 );
 
 CREATE INDEX assoc_req_status_idx ON goiardi. association_requests(status);
