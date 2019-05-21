@@ -2,7 +2,13 @@
 
 BEGIN;
 
-SELECT id, name, organization_id, actor_users, actor_clients, groups, created_at, updated_at FROM goiardi.groups WHERE FALSE;
+SELECT id, name, organization_id, created_at, updated_at FROM goiardi.groups WHERE FALSE;
+
+SELECT id, group_id, user_id, organization_id, created_at, updated_at FROM goiardi.group_actor_users WHERE FALSE;
+
+SELECT id, group_id, client_id, organization_id, created_at, updated_at FROM goiardi.group_actor_clients WHERE FALSE;
+
+SELECT id, group_id, member_group_id, organization_id, created_at, updated_at FROM goiardi.group_groups WHERE FALSE;
 
 SELECT goiardi.merge_groups('gorn', 1, NULL, NULL, NULL);
 SELECT id FROM goiardi.groups WHERE name = 'gorn' AND organization_id = 1 AND actor_users IS NULL;

@@ -2,25 +2,54 @@
 
 BEGIN;
 
--- What would be expected from the group model to be a single 'actors' array is
--- split up into separate 'actor_users' and 'actor_clients' array columns,
--- because they draw from different tables. The actors from these two arrays
--- will be merged together by the code that retrieves this data from the db, of
--- course.
+-- What would be expected from the group model to be a single 'actors'
+-- association table is split up into separate 'actor_users' and 'actor_clients'
+-- tables, because they draw from different tables. The actors from these two
+-- tables will be merged together by the code that retrieves this data from the
+-- db, of course.
 
--- Note to self: foreign keys on actor_users, actor_clients, and groups?
 
 CREATE TABLE goiardi.groups (
 	id bigserial,
 	name text not null,
 	organization_id bigint not null default 1,
-	actor_users bigint[],
-	actor_clients bigint[],
-	groups bigint[],
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),
 	unique(organization_id, name)
+);
+
+CREATE TABLE goiardi.group_actor_users (
+	id bigserial,
+	group_id bigint,
+	user_id bigint,
+	organization_id bigint,
+	created_at timestamp with time zone not null,
+	updated_at timestamp with time zone not null,
+	primary key(id),
+	unique(group_id, user_id, organization_id)
+);
+
+CREATE TABLE goiardi.group_actor_clients (
+	id bigserial,
+	group_id bigint,
+	client_id bigint,
+	organization_id bigint,
+	created_at timestamp with time zone not null,
+	updated_at timestamp with time zone not null,
+	primary key(id),
+	unique(group_id, client_id, organization_id)
+);
+
+CREATE TABLE goiardi.group_groups (
+	id bigserial,
+	group_id bigint,
+	member_group_id bigint,
+	organization_id bigint,
+	created_at timestamp with time zone not null,
+	updated_at timestamp with time zone not null,
+	primary key(id),
+	unique(group_id, member_group_id, organization_id)
 );
 
 -- Rename groups function
