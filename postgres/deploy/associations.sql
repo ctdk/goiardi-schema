@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE TYPE goiardi.association_req_status AS ENUM ('pending', 'accepted', 'rejected');
+CREATE TYPE goiardi.association_req_status AS ENUM ('pending', 'accepted', 'rejected', 'removed');
 CREATE TYPE goiardi.association_req_inviter AS ENUM ('users', 'clients');
 
 CREATE TABLE goiardi.associations(
@@ -33,6 +33,28 @@ CREATE TABLE goiardi.association_requests(
 	unique(user_id, organization_id, inviter_id, inviter_type)
 );
 
-CREATE INDEX assoc_req_status_idx ON goiardi. association_requests(status);
+CREATE INDEX assoc_req_status_idx ON goiardi.association_requests(status);
+
+-- turns out we should have a merge function for association_requests.
+
+CREATE OR REPLACE FUNCTION goiardi.merge_association_requests(m_user_id bigint, m_org_id bigint, m_inviter_id bigint, m_inviter_type text, m_status text)
+	RETURNS VOID AS
+$$
+BEGIN
+	LOOP
+		-- Try updating the association req first
+		UPDATE goiardi.association_requests assoc SET status = m_status, updated_at = NOW() WHERE user_id = m_user_id AND organization_id = m_org_id AND inviter_id = m_inviter_id AND inviter_type = m_inviter_type;
+		IF found THEN
+			RETURN;
+		END IF;
+		-- not found, so insert
+		BEGIN
+			INSERT INTO goiardi.association_requests (user_id, organization_id, inviter_id, inviter_type, status, created_at, updated_at) VALUES (m_user_id, m_org_id, m_inviter_id, m_inviter_type, m_status, NOW(), NOW());
+		EXCEPTION WHEN unique_violation THEN
+		END;
+	END LOOP;
+END:
+$$
+LANGUAGE plpgsql;
 
 COMMIT;
