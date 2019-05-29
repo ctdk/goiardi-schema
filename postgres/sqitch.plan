@@ -59,3 +59,4 @@ clone_schema 2019-05-17T02:07:18Z Jeremy Bingham <jeremy@eridu.local.tld> # Add 
 drop_search_schema 2019-05-17T02:10:29Z Jeremy Bingham <jeremy@eridu.local.tld> # Function to simplify dropping unneeded org search schemas.
 associations 2019-05-20T15:30:09Z Jeremy Bingham <jeremy@eridu.local> # SQL tables for user -> org associations and association requests.
 containers 2019-05-20T15:49:01Z Jeremy Bingham <jeremy@eridu.local> # Add SQL tables for containers; part of the slow slog towards Chef Server 12 support.
+org_new_columns 2019-05-29T15:18:32Z Jeremy Bingham <jeremy@eridu.local> # Add a couple of new columns to the organizations table and update the merge_orgs function accordingly.
