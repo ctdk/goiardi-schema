@@ -53,7 +53,7 @@ BEGIN
 		EXCEPTION WHEN unique_violation THEN
 		END;
 	END LOOP;
-END:
+END;
 $$
 LANGUAGE plpgsql;
 
