@@ -3,7 +3,7 @@
 BEGIN;
 
 -- XXX Add DDLs here.
-DROP FUNCTION goiardi.merge_orgs(m_name text, m_full_name, m_description text, m_guid UUID, m_uuid bytea);
+DROP FUNCTION goiardi.merge_orgs(m_name text, m_description text, m_guid UUID, m_uuid bytea);
 
 CREATE OR REPLACE FUNCTION goiardi.merge_orgs(m_name text, m_description text) RETURNS VOID AS
 $$
