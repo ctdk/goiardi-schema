@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP FUNCTION clone_schema(source_schema text, dest_schema text);
+DROP FUNCTION goiardi.clone_schema(source_schema text, dest_schema text);
 
 COMMIT;

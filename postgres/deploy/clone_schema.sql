@@ -6,7 +6,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION clone_schema(source_schema text, dest_schema text) RETURNS void AS
+CREATE OR REPLACE FUNCTION goiardi.clone_schema(source_schema text, dest_schema text) RETURNS void AS
 $$
  
 DECLARE
