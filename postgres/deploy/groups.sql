@@ -56,15 +56,10 @@ CREATE TABLE goiardi.group_groups (
 
 CREATE OR REPLACE FUNCTION goiardi.rename_group(old_name text, new_name text, m_organization_id int) RETURNS VOID AS
 $$
-DECLARE
-	c_id bigint;
-	c_name text;
 BEGIN
-	BEGIN
-		UPDATE goiardi.groups SET name = new_name, updated_at = NOW() WHERE name = old_name AND organization_id = m_organization_id;
-	EXCEPTION WHEN unique_violation THEN
-		RAISE EXCEPTION 'Group % already exists, cannot rename %', old_name, new_name;
-	END;
+	UPDATE goiardi.groups SET name = new_name, updated_at = NOW() WHERE name = old_name AND organization_id = m_organization_id;
+EXCEPTION WHEN unique_violation THEN
+	RAISE EXCEPTION 'Group % already exists, cannot rename %', old_name, new_name;
 END;
 $$
 LANGUAGE plpgsql;
@@ -75,6 +70,11 @@ CREATE OR REPLACE FUNCTION goiardi.merge_groups(m_name text, m_organization_id b
 $$
 BEGIN
     LOOP
+	-- Do the actors & groups first.
+	-- Blargh, this is maybe getting complicated enough it ought to be a
+	-- stored procedure?
+	-- The thing being that it's OK for the join tables to be empty.
+
         -- first try to update the key
 	UPDATE goiardi.groups SET actor_users = m_actor_users, actor_clients = m_actor_clients, groups = m_groups, updated_at = NOW() WHERE name = m_name AND organization_id = m_organization_id;
 	IF found THEN
