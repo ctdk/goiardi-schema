@@ -68,28 +68,40 @@ LANGUAGE plpgsql;
 -- insert/update function
 CREATE OR REPLACE FUNCTION goiardi.merge_groups(m_name text, m_organization_id bigint, m_actor_users bigint[], m_actor_clients bigint[], m_groups bigint[]) RETURNS VOID AS
 $$
+DECLARE
+	g_id bigint
 BEGIN
-    LOOP
+    -- LOOP
 	-- Do the actors & groups first.
 	-- Blargh, this is maybe getting complicated enough it ought to be a
 	-- stored procedure?
 	-- The thing being that it's OK for the join tables to be empty.
 
+	-- Wait, we don't have to do it like this anymore.
+
         -- first try to update the key
-	UPDATE goiardi.groups SET actor_users = m_actor_users, actor_clients = m_actor_clients, groups = m_groups, updated_at = NOW() WHERE name = m_name AND organization_id = m_organization_id;
-	IF found THEN
-	    RETURN;
-	END IF;
+	-- UPDATE goiardi.groups SET actor_users = m_actor_users, actor_clients = m_actor_clients, groups = m_groups, updated_at = NOW() WHERE name = m_name AND organization_id = m_organization_id;
+	-- IF found THEN
+	--    RETURN;
+	-- END IF;
         -- not there, so try to insert the key
         -- if someone else inserts the same key concurrently,
         -- we could get a unique-key failure
-        BEGIN
-	    INSERT INTO goiardi.groups (name, organization_id, actor_users, actor_clients, groups, created_at, updated_at) VALUES (m_name, m_organization_id, m_actor_users, m_actor_clients, m_groups, NOW(), NOW());
-            RETURN;
-        EXCEPTION WHEN unique_violation THEN
+        -- BEGIN
+	--    INSERT INTO goiardi.groups (name, organization_id, actor_users, actor_clients, groups, created_at, updated_at) VALUES (m_name, m_organization_id, m_actor_users, m_actor_clients, m_groups, NOW(), NOW());
+        --    RETURN;
+        -- EXCEPTION WHEN unique_violation THEN
             -- Do nothing, and loop to try the UPDATE again.
-        END;
-    END LOOP;
+        -- END;
+    -- END LOOP;
+
+	-- Do the INSERT ... ON CONFLICT thingy, also returning the id into
+	-- g_id.
+
+	-- Delete any existing group associations before inserting the new ones
+	DELETE FROM
+	INSERT INTO goiardi.group_actor_clients (group_id, client_id, organization_id) VALUES 
+
 END;
 $$
 LANGUAGE plpgsql;
