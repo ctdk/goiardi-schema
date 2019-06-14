@@ -99,8 +99,16 @@ BEGIN
 	-- g_id.
 
 	-- Delete any existing group associations before inserting the new ones
-	DELETE FROM
+
+	-- clients
+	DELETE FROM goiardi.group_actor_clients WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (client_id = any(m_actor_clients));
 	INSERT INTO goiardi.group_actor_clients (group_id, client_id, organization_id) VALUES 
+
+	-- users
+	DELETE FROM goiardi.group_actor_users WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (user_id = any(m_actor_users));
+
+	-- groups
+	DELETE FROM goiardi.group_groups WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (member_group_id = any(m_groups));
 
 END;
 $$
