@@ -98,11 +98,22 @@ BEGIN
 	-- Do the INSERT ... ON CONFLICT thingy, also returning the id into
 	-- g_id.
 
+	INSERT INTO goiardi.groups
+		(name, organization_id, actor_users, actor_clients, groups, created_at, updated_at)
+		VALUES
+		(m_name, m_organization_id, m_actor_users, m_actor_clients, m_groups, NOW(), NOW())
+		ON CONFLICT (organization_id, name)
+			-- Don't actually change the name or anything, since
+			-- that's what the rename function's for. Just bump
+			-- updated_at, since we want to reflect any updates to
+			-- the member associations.
+			DO UPDATE SET updated_at = NOW()
+		RETURNING id INTO g_id;
 	-- Delete any existing group associations before inserting the new ones
 
 	-- clients
 	DELETE FROM goiardi.group_actor_clients WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (client_id = any(m_actor_clients));
-	INSERT INTO goiardi.group_actor_clients (group_id, client_id, organization_id) VALUES 
+	INSERT INTO goiardi.group_actor_clients (group_id, client_id, organization_id, created_at, updated_at) VALUES
 
 	-- users
 	DELETE FROM goiardi.group_actor_users WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (user_id = any(m_actor_users));
