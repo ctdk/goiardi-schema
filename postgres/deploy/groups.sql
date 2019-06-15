@@ -75,9 +75,9 @@ BEGIN
 	-- g_id.
 
 	INSERT INTO goiardi.groups
-		(name, organization_id, actor_users, actor_clients, groups, created_at, updated_at)
+		(name, organization_id, created_at, updated_at)
 		VALUES
-		(m_name, m_organization_id, m_actor_users, m_actor_clients, m_groups, NOW(), NOW())
+		(m_name, m_organization_id, NOW(), NOW())
 		ON CONFLICT (organization_id, name)
 			-- Don't actually change the name or anything, since
 			-- that's what the rename function's for. Just bump
@@ -89,30 +89,33 @@ BEGIN
 
 	-- clients
 	DELETE FROM goiardi.group_actor_clients WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (client_id = any(m_actor_clients));
-	INSERT INTO goiardi.group_actor_clients
+	EXECUTE format('INSERT INTO goiardi.group_actor_clients
 		(group_id, client_id, organization_id, created_at, updated_at)
-		SELECT g_id ggid, cid, m_organization_id gorgid, NOW() c, NOW() u
-		FROM unnest(m_actor_clients) cid
+		SELECT %L ggid, cid, %L gorgid, NOW() c, NOW() u
+		FROM unnest($1) cid
 		ON CONFLICT (group_id, client_id, organization_id)
-			DO UPDATE SET updated_at = NOW(); 
+			DO UPDATE SET updated_at = NOW()', g_id, m_organization_id, g_id, m_organization_id
+	) USING m_actor_clients; 
 
 	-- users
 	DELETE FROM goiardi.group_actor_users WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (user_id = any(m_actor_users));
-	INSERT INTO goiardi.group_actor_users
+	EXECUTE format('INSERT INTO goiardi.group_actor_users
 		(group_id, user_id, organization_id, created_at, updated_at)
-		SELECT g_id ggid, uid, m_organization_id gorgid, NOW() c, NOW() u
-		FROM unnest(m_actor_users) uid
+		SELECT %L ggid, uid, %L gorgid, NOW() c, NOW() u
+		FROM unnest($1) uid
 		ON CONFLICT (group_id, user_id, organization_id)
-			DO UPDATE SET updated_at = NOW();
+			DO UPDATE SET updated_at = NOW()', g_id, m_organization_id, g_id, m_organization_id
+	) USING m_actor_users;
 
 	-- groups
 	DELETE FROM goiardi.group_groups WHERE group_id = g_id AND organization_id = m_organization_id AND NOT (member_group_id = any(m_groups));
-	INSERT INTO goiardi.group_groups
+	EXECUTE format('INSERT INTO goiardi.group_groups
 		(group_id, member_group_id, organization_id, created_at, updated_at)
-		SELECT g_id ggid, mgid, m_organization_id gorgid, NOW() c, NOW() u
-		FROM unnest(m_groups) cid
+		SELECT %L ggid, mgid, %L gorgid, NOW() c, NOW() u
+		FROM unnest($1) mgid
 		ON CONFLICT (group_id, member_group_id, organization_id)
-			DO UPDATE SET updated_at = NOW();
+			DO UPDATE SET updated_at = NOW()', g_id, m_organization_id, g_id, m_organization_id
+	) USING m_groups;
 
 END;
 $$
