@@ -15,8 +15,8 @@ CREATE TABLE goiardi.groups (
 	organization_id bigint not null default 1,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
-	primary key(id),
-	unique(organization_id, name)
+	PRIMARY KEY(id),
+	UNIQUE(organization_id, name)
 );
 
 CREATE TABLE goiardi.group_actor_users (
@@ -26,8 +26,14 @@ CREATE TABLE goiardi.group_actor_users (
 	organization_id bigint,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
-	primary key(id),
-	unique(group_id, user_id, organization_id)
+	PRIMARY KEY(id),
+	UNIQUE(group_id, user_id, organization_id),
+	FOREIGN KEY(user_id)
+		REFERENCES goiardi.users(id)
+		ON DELETE CASCADE,
+	FOREIGN KEY(group_id)
+		REFERENCES goiardi.groups(id)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE goiardi.group_actor_clients (
@@ -37,8 +43,14 @@ CREATE TABLE goiardi.group_actor_clients (
 	organization_id bigint,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
-	primary key(id),
-	unique(group_id, client_id, organization_id)
+	PRIMARY KEY(id),
+	UNIQUE(group_id, client_id, organization_id),
+	FOREIGN KEY(client_id)
+		REFERENCES goiardi.clients(id)
+		ON DELETE CASCADE,
+	FOREIGN KEY(group_id)
+		REFERENCES goiardi.groups(id)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE goiardi.group_groups (
@@ -48,8 +60,14 @@ CREATE TABLE goiardi.group_groups (
 	organization_id bigint,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
-	primary key(id),
-	unique(group_id, member_group_id, organization_id)
+	PRIMARY KEY(id),
+	UNIQUE(group_id, member_group_id, organization_id),
+	FOREIGN KEY(member_group_id)
+		REFERENCES goiardi.groups(id)
+		ON DELETE CASCADE,
+	FOREIGN KEY(group_id)
+		REFERENCES goiardi.groups(id)
+		ON DELETE CASCADE
 );
 
 -- Rename groups function
