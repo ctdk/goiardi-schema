@@ -5,7 +5,7 @@ BEGIN;
 CREATE TABLE goiardi.containers(
 	id bigserial,
 	name text,
-	organization_id bigint,
+	organization_id bigint NOT NULL DEFAULT 1,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),

@@ -21,9 +21,9 @@ CREATE TABLE goiardi.groups (
 
 CREATE TABLE goiardi.group_actor_users (
 	id bigserial,
-	group_id bigint,
-	user_id bigint,
-	organization_id bigint,
+	group_id bigint NOT NULL,
+	user_id bigint NOT NULL,
+	organization_id bigint NOT NULL,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
@@ -38,9 +38,9 @@ CREATE TABLE goiardi.group_actor_users (
 
 CREATE TABLE goiardi.group_actor_clients (
 	id bigserial,
-	group_id bigint,
-	client_id bigint,
-	organization_id bigint,
+	group_id bigint NOT NULL,
+	client_id bigint NOT NULL,
+	organization_id bigint NOT NULL,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
@@ -55,9 +55,9 @@ CREATE TABLE goiardi.group_actor_clients (
 
 CREATE TABLE goiardi.group_groups (
 	id bigserial,
-	group_id bigint,
-	member_group_id bigint,
-	organization_id bigint,
+	group_id bigint NOT NULL,
+	member_group_id bigint NOT NULL,
+	organization_id bigint NOT NULL,
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	PRIMARY KEY(id),
