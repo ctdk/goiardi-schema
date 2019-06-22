@@ -2,13 +2,11 @@
 
 BEGIN;
 
--- Also should the organization_id be a foreign key (and would that make this
--- index superfluous?
 -- add an index for organization_id by itself on the cookbooks table
 CREATE INDEX cb_organization_id ON goiardi.cookbooks(organization_id);
 
 -- new cookbook merge function
-DROP FUNCTION goiardi.merge_cookbooks(m_name text);
+DROP FUNCTION IF EXISTS goiardi.merge_cookbooks(m_name text);
 
 CREATE OR REPLACE FUNCTION goiardi.merge_cookbooks(m_name text, m_organization_id bigint) RETURNS BIGINT AS
 $$
