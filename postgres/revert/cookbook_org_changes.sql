@@ -2,7 +2,7 @@
 
 BEGIN;
 
-DROP INDEX IF EXISTS cb_organization_id;
+DROP INDEX IF EXISTS goiardi.cb_organization_id;
 
 DROP FUNCTION IF EXISTS goiardi.merge_cookbooks(m_name text, m_organization_id bigint);
 
