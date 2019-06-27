@@ -41,18 +41,10 @@ CREATE OR REPLACE FUNCTION goiardi.merge_association_requests(m_user_id bigint, 
 	RETURNS VOID AS
 $$
 BEGIN
-	LOOP
-		-- Try updating the association req first
-		UPDATE goiardi.association_requests assoc SET status = m_status, updated_at = NOW() WHERE user_id = m_user_id AND organization_id = m_org_id AND inviter_id = m_inviter_id AND inviter_type = m_inviter_type;
-		IF found THEN
-			RETURN;
-		END IF;
-		-- not found, so insert
-		BEGIN
-			INSERT INTO goiardi.association_requests (user_id, organization_id, inviter_id, inviter_type, status, created_at, updated_at) VALUES (m_user_id, m_org_id, m_inviter_id, m_inviter_type, m_status, NOW(), NOW());
-		EXCEPTION WHEN unique_violation THEN
-		END;
-	END LOOP;
+	INSERT INTO goiardi.association_requests (user_id, organization_id, inviter_id, inviter_type, status, created_at, updated_at)
+		VALUES (m_user_id, m_org_id, m_inviter_id, m_inviter_type, m_status, NOW(), NOW())
+		ON CONFLICT(user_id, organization_id, inviter_id, inviter_type)
+			DO UPDATE SET status = m_status, updated_at = NOW();
 END;
 $$
 LANGUAGE plpgsql;
