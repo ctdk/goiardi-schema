@@ -4,7 +4,6 @@ BEGIN;
 
 ALTER TABLE goiardi.organizations ADD COLUMN guid UUID DEFAULT NULL;
 ALTER TABLE goiardi.organizations ADD COLUMN uuid bytea DEFAULT NULL;
-ALTER TABLE goiardi.organizations ADD COLUMN full_name text;
 
 DROP FUNCTION goiardi.merge_orgs(m_name text, m_description text);
 
