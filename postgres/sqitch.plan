@@ -63,3 +63,4 @@ org_new_columns 2019-05-29T15:18:32Z Jeremy Bingham <jeremy@eridu.local> # Add a
 cookbook_org_changes 2019-06-21T16:01:26Z Jeremy Bingham <jeremy@eridu.local> # Making a couple of updates to the cookbooks and cookbook versions SQL definitions to take orgs into account more fully.
 org_foreign_keys 2019-06-22T00:53:37Z Jeremy Bingham <jeremy@eridu.local> # Add foreign key constraints for organization_id on the relevant tables
 node_latest_status_orgs 2019-06-27T01:22:27Z Jeremy Bingham <jeremy@eridu.local.tld> # Add organization_id to node_latest_statuses view.
+client_insert_on_conflict 2019-06-27T16:11:51Z Jeremy Bingham <jeremy@eridu.local> # Update mereg_clients function to use INSERT ... ON CONFLICT.
