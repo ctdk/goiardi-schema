@@ -4,6 +4,8 @@
 
 BEGIN;
 
+DROP FUNCTION IF EXISTS goiardi.merge_clients(m_name text, m_nodename text, m_validator boolean, m_admin boolean, m_public_key text, m_certificate text, m_organization_id bigint);
+
 CREATE OR REPLACE FUNCTION goiardi.merge_clients(m_name text, m_nodename text, m_validator boolean, m_admin boolean, m_public_key text, m_certificate text) RETURNS VOID AS
 $$
 DECLARE
