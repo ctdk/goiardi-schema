@@ -13,12 +13,12 @@ BEGIN
         VALUES (m_name, m_chef_environment, m_run_list, m_automatic_attr, m_normal_attr, m_default_attr, m_override_attr, NOW(), NOW(), m_organization_id)
         ON CONFLICT(organization_id, name)
         DO UPDATE SET
-            chef_environment = m_chef_environment
-            run_list = m_run_list
-            automatic_attr = m_automatic_attr
-            normal_attr = m_normal_attr
-            default_attr = m_default_attr
-            override_attr = m_override_attr
+            chef_environment = m_chef_environment,
+            run_list = m_run_list,
+            automatic_attr = m_automatic_attr,
+            normal_attr = m_normal_attr,
+            default_attr = m_default_attr,
+            override_attr = m_override_attr,
             updated_at = NOW();
 END;
 $$

@@ -11,13 +11,13 @@ BEGIN
         VALUES (m_run_id, m_node_name, m_start_time, m_end_time, m_total_res_count, m_status, m_run_list, m_resources, m_data, NOW(), NOW(), m_organization_id)
         ON CONFLICT(run_id)
         DO UPDATE SET
-             start_time = m_start_time
-            end_time = m_end_time
-            total_res_count = m_total_res_count
-            status = m_status
-            run_list = m_run_list
-            resources = m_resources
-            data = m_data
+            start_time = m_start_time,
+            end_time = m_end_time,
+            total_res_count = m_total_res_count,
+            status = m_status,
+            run_list = m_run_list,
+            resources = m_resources,
+            data = m_data,
             updated_at = NOW();
 END;
 $$

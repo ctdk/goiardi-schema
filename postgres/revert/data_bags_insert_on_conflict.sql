@@ -4,7 +4,7 @@ BEGIN;
 
 -- XXX Add DDLs here.
 
-DROP FUNCTION IF EXISTS goiardi.merge_data_bags(m_name text, m_organization_id bigint)
+DROP FUNCTION IF EXISTS goiardi.merge_data_bags(m_name text, m_organization_id bigint);
 
 CREATE OR REPLACE FUNCTION goiardi.merge_data_bags(m_name text) RETURNS BIGINT AS
 $$

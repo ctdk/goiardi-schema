@@ -11,11 +11,11 @@ BEGIN
         VALUES (m_name, m_description, m_run_list, m_env_run_lists, m_default_attr, m_override_attr, NOW(), NOW(), m_organization_id)
         ON CONFLICT(organization_id, name)
         DO UPDATE SET
-            description = m_description
-            run_list = m_run_list
-            env_run_lists = m_env_run_lists
-            default_attr = m_default_attr
-            override_attr = m_override_attr
+            description = m_description,
+            run_list = m_run_list,
+            env_run_lists = m_env_run_lists,
+            default_attr = m_default_attr,
+            override_attr = m_override_attr,
             updated_at = NOW();
 END;
 $$
