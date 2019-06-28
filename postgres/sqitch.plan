@@ -66,3 +66,4 @@ node_latest_status_orgs 2019-06-27T01:22:27Z Jeremy Bingham <jeremy@eridu.local.
 client_insert_on_conflict 2019-06-27T16:11:51Z Jeremy Bingham <jeremy@eridu.local> # Update mereg_clients function to use INSERT ... ON CONFLICT.
 data_bags_insert_on_conflict 2019-06-28T00:48:57Z Jeremy Bingham <jeremy@eridu.local> # Update data bags merge_ function
 environments_insert_on_conflict 2019-06-28T01:03:41Z Jeremy Bingham <jeremy@eridu.local> # Environment insert ... on conflict
+nodes_insert_on_conflict 2019-06-28T01:10:41Z Jeremy Bingham <jeremy@eridu.local> # Node insert ... on conflict
