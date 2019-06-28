@@ -64,3 +64,5 @@ cookbook_org_changes 2019-06-21T16:01:26Z Jeremy Bingham <jeremy@eridu.local> # 
 org_foreign_keys 2019-06-22T00:53:37Z Jeremy Bingham <jeremy@eridu.local> # Add foreign key constraints for organization_id on the relevant tables
 node_latest_status_orgs 2019-06-27T01:22:27Z Jeremy Bingham <jeremy@eridu.local.tld> # Add organization_id to node_latest_statuses view.
 client_insert_on_conflict 2019-06-27T16:11:51Z Jeremy Bingham <jeremy@eridu.local> # Update mereg_clients function to use INSERT ... ON CONFLICT.
+data_bags_insert_on_conflict 2019-06-28T00:48:57Z Jeremy Bingham <jeremy@eridu.local> # Update data bags merge_ function
+environments_insert_on_conflict 2019-06-28T01:03:41Z Jeremy Bingham <jeremy@eridu.local> # Environment insert ... on conflict
