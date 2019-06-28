@@ -70,3 +70,4 @@ nodes_insert_on_conflict 2019-06-28T01:10:41Z Jeremy Bingham <jeremy@eridu.local
 reports_insert_on_conflict 2019-06-28T01:21:15Z Jeremy Bingham <jeremy@eridu.local> # reports insert ... on conflict
 roles_insert_on_conflict 2019-06-28T01:30:09Z Jeremy Bingham <jeremy@eridu.local> # role insert ... on conflict
 sandboxes_insert_on_conflict 2019-06-28T01:38:10Z Jeremy Bingham <jeremy@eridu.local> # sandbox insert ... on conflict
+shovey_insert_on_conflict 2019-06-28T15:16:31Z Jeremy Bingham <jeremy@eridu.local> # shovey insert ... on conflict
