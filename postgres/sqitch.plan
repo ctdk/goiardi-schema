@@ -68,3 +68,4 @@ data_bags_insert_on_conflict 2019-06-28T00:48:57Z Jeremy Bingham <jeremy@eridu.l
 environments_insert_on_conflict 2019-06-28T01:03:41Z Jeremy Bingham <jeremy@eridu.local> # Environment insert ... on conflict
 nodes_insert_on_conflict 2019-06-28T01:10:41Z Jeremy Bingham <jeremy@eridu.local> # Node insert ... on conflict
 reports_insert_on_conflict 2019-06-28T01:21:15Z Jeremy Bingham <jeremy@eridu.local> # reports insert ... on conflict
+roles_insert_on_conflict 2019-06-28T01:30:09Z Jeremy Bingham <jeremy@eridu.local> # role insert ... on conflict
