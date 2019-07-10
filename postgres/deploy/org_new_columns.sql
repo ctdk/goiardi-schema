@@ -5,7 +5,7 @@ BEGIN;
 ALTER TABLE goiardi.organizations ADD COLUMN guid UUID DEFAULT NULL;
 ALTER TABLE goiardi.organizations ADD COLUMN uuid bytea DEFAULT NULL;
 
-UPDATE goiardi.organizations SET uuid = '\x0000000000000000', guid = '00000000-0000-0000-0000-000000000000' WHERE uuid IS NULL AND guid IS NULL;
+UPDATE goiardi.organizations SET uuid = '\x00000000000000000000000000000000', guid = '00000000-0000-0000-0000-000000000000' WHERE uuid IS NULL AND guid IS NULL;
 
 DROP FUNCTION goiardi.merge_orgs(m_name text, m_description text);
 
