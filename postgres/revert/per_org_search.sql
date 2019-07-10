@@ -2,6 +2,14 @@
 
 BEGIN;
 
+-- drop any created schemas
+DO
+$$
+	BEGIN
+		EXECUTE format('DROP SCHEMA %s CASCADE', (SELECT string_agg(schema_name, ', ') FROM information_schema.schemata WHERE schema_name like 'goiardi_search_org_%'));
+	END;
+$$;
+
 DROP FUNCTION goiardi_search_base.delete_search_item(col text, item text, m_organization_id int);
 DROP FUNCTION goiardi_search_base.delete_search_collection(col text, m_organization_id int);
 DROP TABLE goiardi_search_base.search_items;
