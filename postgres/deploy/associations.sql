@@ -37,7 +37,7 @@ CREATE INDEX assoc_req_status_idx ON goiardi.association_requests(status);
 
 -- turns out we should have a merge function for association_requests.
 
-CREATE OR REPLACE FUNCTION goiardi.merge_association_requests(m_user_id bigint, m_org_id bigint, m_inviter_id bigint, m_inviter_type text, m_status text)
+CREATE OR REPLACE FUNCTION goiardi.merge_association_requests(m_user_id bigint, m_org_id bigint, m_inviter_id bigint, m_inviter_type goiardi.association_req_inviter, m_status goiardi.association_req_status)
 	RETURNS VOID AS
 $$
 BEGIN
