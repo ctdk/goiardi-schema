@@ -9,8 +9,10 @@ UPDATE goiardi.organizations SET uuid = '\x00000000000000000000000000000000', gu
 
 DROP FUNCTION goiardi.merge_orgs(m_name text, m_description text);
 
-CREATE OR REPLACE FUNCTION goiardi.merge_orgs(m_name text, m_description text, m_guid UUID, m_uuid bytea) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION goiardi.merge_orgs(m_name text, m_description text, m_guid UUID, m_uuid bytea) RETURNS BIGINT AS
 $$
+DECLARE
+    org_id BIGINT;
 BEGIN
     INSERT INTO goiardi.organizations (
         name,
@@ -33,7 +35,9 @@ BEGIN
                 description = m_description,
                 guid = m_guid,
                 uuid = m_uuid,
-                updated_at = NOW();
+                updated_at = NOW()
+	RETURNING id INTO org_id;
+	RETURN org_id;
 END;
 $$
 LANGUAGE plpgsql;
