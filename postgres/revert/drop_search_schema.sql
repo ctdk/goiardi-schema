@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP FUNCTION goiardi.drop_search_schema(search_schema text);
+DROP PROCEDURE goiardi.drop_search_schema(search_schema text);
 
 COMMIT;

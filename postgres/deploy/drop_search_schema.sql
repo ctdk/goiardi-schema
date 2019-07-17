@@ -2,14 +2,12 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION goiardi.drop_search_schema(search_schema text) RETURNS void AS
+CREATE OR REPLACE PROCEDURE goiardi.drop_search_schema(search_schema text) AS
 $$
-
 BEGIN
 	EXECUTE 'DROP SCHEMA ' || quote_ident(search_schema) || ' CASCADE';
 END;
-
 $$
-LANGUAGE plpgsql VOLATILE;
+LANGUAGE plpgsql;
 
 COMMIT;
