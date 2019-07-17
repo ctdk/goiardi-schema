@@ -16,8 +16,8 @@ $$
 		DELETE FROM goiardi.log_infos WHERE organization_id = m_organization_id;
 		DELETE FROM goiardi.reports WHERE organization_id = m_organization_id;
 		DELETE FROM goiardi.nodes WHERE organization_id = m_organization_id;
-		DELETE FROM goiardi.shovey_run_streams WHERE shovey_run_id IN (SELECT sr.id FROM goiardi.shovey_runs sr JOIN shoveys s ON sr.shovey_id = s.id WHERE s.organization_id = m_organization_id);
-		DELETE FROM goiardi.shovey_runs WHERE shovey_id IN (SELECT id FROM shoveys WHERE organization_id = m_organization_id);
+		DELETE FROM goiardi.shovey_run_streams WHERE shovey_run_id IN (SELECT sr.id FROM goiardi.shovey_runs sr JOIN goiardi.shoveys s ON sr.shovey_id = s.id WHERE s.organization_id = m_organization_id);
+		DELETE FROM goiardi.shovey_runs WHERE shovey_id IN (SELECT id FROM goiardi.shoveys WHERE organization_id = m_organization_id);
 		DELETE FROM goiardi.shoveys WHERE organization_id = m_organization_id;
 		DELETE FROM goiardi.sandboxes WHERE organization_id = m_organization_id;
 		DELETE FROM goiardi.groups WHERE organization_id = m_organization_id;
