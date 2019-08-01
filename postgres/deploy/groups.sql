@@ -77,7 +77,7 @@ $$
 BEGIN
 	UPDATE goiardi.groups SET name = new_name, updated_at = NOW() WHERE name = old_name AND organization_id = m_organization_id;
 EXCEPTION WHEN unique_violation THEN
-	RAISE EXCEPTION 'Group % already exists, cannot rename %', old_name, new_name;
+	RAISE EXCEPTION 'Group % already exists, cannot rename %', new_name, old_name;
 END;
 $$
 LANGUAGE plpgsql;
