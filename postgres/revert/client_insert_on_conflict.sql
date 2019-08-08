@@ -4,7 +4,10 @@
 
 BEGIN;
 
-DROP FUNCTION IF EXISTS goiardi.merge_clients(m_name text, m_nodename text, m_validator boolean, m_admin boolean, m_public_key text, m_certificate text, m_organization_id bigint);
+DROP INDEX IF EXISTS goiardi.client_authz_id;
+ALTER TABLE goiardi.clients DROP COLUMN authz_id;
+
+DROP FUNCTION IF EXISTS goiardi.merge_clients(m_name text, m_nodename text, m_validator boolean, m_admin boolean, m_public_key text, m_certificate text, m_authz_id varchar(32), m_organization_id bigint);
 
 CREATE OR REPLACE FUNCTION goiardi.merge_clients(m_name text, m_nodename text, m_validator boolean, m_admin boolean, m_public_key text, m_certificate text) RETURNS VOID AS
 $$

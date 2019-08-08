@@ -73,3 +73,4 @@ sandboxes_insert_on_conflict 2019-06-28T01:38:10Z Jeremy Bingham <jeremy@eridu.l
 shovey_insert_on_conflict 2019-06-28T15:16:31Z Jeremy Bingham <jeremy@eridu.local> # shovey insert ... on conflict
 delete_orgs 2019-07-17T01:16:30Z Jeremy Bingham <jeremy@eridu.local> # stored procedure to roll up organization deletion into one handy place
 alter_environment_sequence 2019-07-19T16:27:51Z Jeremy Bingham <jeremy@eridu.local> # set environment id sequence to start at 2 to avoid trouble with creating the first new environment after startup
+user_insert_on_conflict 2019-08-08T15:50:12Z Jeremy Bingham <jeremy@eridu.local> # user insert on conflict - also add the new columns
