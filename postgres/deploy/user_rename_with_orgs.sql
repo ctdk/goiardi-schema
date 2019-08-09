@@ -6,8 +6,10 @@ DROP FUNCTION IF EXISTS goiardi.rename_user(old_name text, new_name text, m_orga
 
 CREATE OR REPLACE FUNCTION goiardi.rename_user(old_name text, new_name text) RETURNS VOID AS
 $$
+DECLARE
+	c_exist bool;
 BEGIN
-	SELECT true FROM goiardi.clients WHERE name = new_name;
+	SELECT true INTO c_exist FROM goiardi.clients WHERE name = new_name;
 
 	-- TODO: better error message that includes all clients, and all org
 	-- names.
