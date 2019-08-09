@@ -6,7 +6,7 @@ DROP FUNCTION goiardi.merge_users(m_name text, m_displayname text, m_email text,
 
 ALTER TABLE goiardi.users ADD COLUMN first_name text DEFAULT NULL;
 ALTER TABLE goiardi.users ADD COLUMN last_name text DEFAULT NULL;
-ALTER TABLE goiardi.users ADD COLUMN recoverer bool DEFAULT FALSE; -- ?
+ALTER TABLE goiardi.users ADD COLUMN recoveror bool DEFAULT FALSE; -- ?
 ALTER TABLE goiardi.users ADD COLUMN authz_id varchar(32) DEFAULT NULL;
 
 CREATE INDEX user_authz_id ON goiardi.users(authz_id);
@@ -17,17 +17,13 @@ CREATE INDEX user_authz_id ON goiardi.users(authz_id);
 
 -- In addition to the new columns, this should return the user id.
 
-CREATE OR REPLACE FUNCTION goiardi.merge_users(m_name text, m_displayname text, m_email text, m_admin boolean, m_public_key text, m_passwd varchar(128), m_salt bytea, m_first_name text, m_last_name text, m_recoveror bool, m_authz_id varchar(32), m_organization_id bigint) RETURNS BIGINT AS
+CREATE OR REPLACE FUNCTION goiardi.merge_users(m_name text, m_displayname text, m_email text, m_admin boolean, m_public_key text, m_passwd varchar(128), m_salt bytea, m_first_name text, m_last_name text, m_recoveror bool, m_authz_id varchar(32)) RETURNS BIGINT AS
 $$
 DECLARE
     user_id BIGINT;
     c_id BIGINT;
     c_name TEXT;
 BEGIN
-    SELECT id, name INTO c_id, c_name FROM goiardi.clients WHERE name = m_name AND organization_id = m_organization_id;
-    IF FOUND THEN
-        RAISE EXCEPTION 'a client with id % named % was found that would conflict with this client', c_id, c_name;
-    END IF;
     IF m_email = '' THEN
         m_email := NULL;
     END IF;

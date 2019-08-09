@@ -2,13 +2,13 @@
 
 BEGIN;
 
-DROP FUNCTION IF EXISTS goiardi.merge_users(m_name text, m_displayname text, m_email text, m_admin boolean, m_public_key text, m_passwd varchar(128), m_salt bytea, m_first_name text, m_last_name text, m_recoveror bool, m_authz_id varchar(32), m_organization_id bigint);
+DROP FUNCTION IF EXISTS goiardi.merge_users(m_name text, m_displayname text, m_email text, m_admin boolean, m_public_key text, m_passwd varchar(128), m_salt bytea, m_first_name text, m_last_name text, m_recoveror bool, m_authz_id varchar(32));
 
 DROP INDEX IF EXISTS goiardi.user_authz_id;
 
 ALTER TABLE goiardi.users DROP COLUMN first_name;
 ALTER TABLE goiardi.users DROP COLUMN last_name;
-ALTER TABLE goiardi.users DROP COLUMN recoverer;
+ALTER TABLE goiardi.users DROP COLUMN recoveror;
 ALTER TABLE goiardi.users DROP COLUMN authz_id;
 
 CREATE OR REPLACE FUNCTION goiardi.merge_users(m_name text, m_displayname text, m_email text, m_admin boolean, m_public_key text, m_passwd varchar(128), m_salt bytea, m_organization_id bigint) RETURNS VOID AS

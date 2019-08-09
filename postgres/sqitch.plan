@@ -74,3 +74,4 @@ shovey_insert_on_conflict 2019-06-28T15:16:31Z Jeremy Bingham <jeremy@eridu.loca
 delete_orgs 2019-07-17T01:16:30Z Jeremy Bingham <jeremy@eridu.local> # stored procedure to roll up organization deletion into one handy place
 alter_environment_sequence 2019-07-19T16:27:51Z Jeremy Bingham <jeremy@eridu.local> # set environment id sequence to start at 2 to avoid trouble with creating the first new environment after startup
 user_insert_on_conflict 2019-08-08T15:50:12Z Jeremy Bingham <jeremy@eridu.local> # user insert on conflict - also add the new columns
+user_rename_with_orgs 2019-08-09T00:21:57Z Jeremy Bingham <jeremy@eridu.local> # update user rename to take orgs into account
