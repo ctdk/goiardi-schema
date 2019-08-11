@@ -84,7 +84,7 @@ LANGUAGE plpgsql;
 -- end rename groups
 
 -- insert/update function
-CREATE OR REPLACE FUNCTION goiardi.merge_groups(m_name text, m_organization_id bigint, m_actor_users bigint[], m_actor_clients bigint[], m_groups bigint[]) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION goiardi.merge_groups(m_name text, m_organization_id bigint, m_actor_users bigint[], m_actor_clients bigint[], m_groups bigint[]) RETURNS BIGINT AS
 $$
 DECLARE
 	g_id bigint;
@@ -141,6 +141,7 @@ BEGIN
 		) USING m_groups;
 	END IF;
 
+	RETURN g_id;
 END;
 $$
 LANGUAGE plpgsql;
