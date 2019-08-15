@@ -5,9 +5,14 @@ BEGIN;
 -- drop any created schemas
 DO
 $$
-	BEGIN
+DECLARE
+	sch_count bigint;
+BEGIN
+	SELECT count(*) c INTO sch_count FROM information_schema.schemata WHERE schema_name like 'goiardi_search_org_%';
+	IF sch_count > 0 THEN
 		EXECUTE format('DROP SCHEMA %s CASCADE', (SELECT string_agg(schema_name, ', ') FROM information_schema.schemata WHERE schema_name like 'goiardi_search_org_%'));
-	END;
+	END IF;
+END;
 $$;
 
 DROP FUNCTION goiardi_search_base.delete_search_item(col text, item text, m_organization_id int);
