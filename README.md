@@ -5,7 +5,7 @@ This is a [sqitch][] project for managing the [goiardi][] schemas. Using sqitch 
 
 The MySQL schema is used in goiardi from version 0.5.0, including all 0.11.x releases, up until 1.0.0. The [sqitch MySQL tutorial][] explains how to set up and use sqitch, and the [MySQL mode README section][] in goiardi explains how to use sqitch to deploy the goiardi schema and configure goiardi to use MySQL.
 
-The Postgres schema is used in goiardi as of version 0.6.0. The [sqitch Postgres tutorial][] explains how to set up and use sqitch for Postgres, and the [Postgres mode README section][] in goiardi explains how to use sqitch to deploy the goiardi schema and configure goiardi to use PostgreSQL.
+The Postgres schema is used in goiardi as of version 0.6.0, and as of version 1.0.0 is the only supported database backend. The [sqitch Postgres tutorial][] explains how to set up and use sqitch for Postgres, and the [Postgres mode README section][] in goiardi explains how to use sqitch to deploy the goiardi schema and configure goiardi to use PostgreSQL.
 
 While most of the tables here are unique to goiardi and not directly derived from the erchef schemas, as noted in the NOTICE file and the appropriate SQL files the joined_cookbook_version view is directly adapted to goiardi from the one found in erchef.
 
