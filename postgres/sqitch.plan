@@ -75,3 +75,4 @@ delete_orgs 2019-07-17T01:16:30Z Jeremy Bingham <jeremy@eridu.local> # stored pr
 alter_environment_sequence 2019-07-19T16:27:51Z Jeremy Bingham <jeremy@eridu.local> # set environment id sequence to start at 2 to avoid trouble with creating the first new environment after startup
 user_insert_on_conflict 2019-08-08T15:50:12Z Jeremy Bingham <jeremy@eridu.local> # user insert on conflict - also add the new columns
 user_rename_with_orgs 2019-08-09T00:21:57Z Jeremy Bingham <jeremy@eridu.local> # update user rename to take orgs into account
+org_shovey_keys 2020-01-09T16:53:13Z Jeremy Bingham <jeremy@eridu.local> # Add a column to organizations to store the shovey signing key in the database.
