@@ -13,7 +13,7 @@ CREATE TABLE goiardi.policy_revisions (
 	solution_dependencies jsonb,
 	created_at TIMESTAMP WITH TIME ZONE NOT NULL,
 	PRIMARY KEY(id),
-	UNIQUE(revision_id), -- This *may* need to be unique to a policy, but
+	UNIQUE(policy_id, revision_id), -- This *may* need to be unique to a policy, but
 			     -- probably not
 	FOREIGN KEY(policy_id)
 		REFERENCES goiardi.policies(id)
