@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add verifications here.
+SELECT id, name, organization_id, created_at, updated_at FROM goiardi.policies WHERE FALSE;
 
 ROLLBACK;

@@ -2,6 +2,8 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+DROP TABLE IF EXISTS goiardi.policy_groups_to_policies;
+
+DROP TABLE IF EXISTS goiardi.policy_groups;
 
 COMMIT;

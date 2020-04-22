@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add verifications here.
+SELECT id, policy_id, revision_id, run_list, cookbook_locks, default_attr, override_attr, solution_dependencies FROM goiardi.policy_revisions WHERE FALSE;
 
 ROLLBACK;
