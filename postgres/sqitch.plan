@@ -77,6 +77,6 @@ user_insert_on_conflict 2019-08-08T15:50:12Z Jeremy Bingham <jeremy@eridu.local>
 user_rename_with_orgs 2019-08-09T00:21:57Z Jeremy Bingham <jeremy@eridu.local> # update user rename to take orgs into account
 org_shovey_keys 2020-01-09T16:53:13Z Jeremy Bingham <jeremy@eridu.local> # Add a column to organizations to store the shovey signing key in the database.
 orgify_node_status_insert 2020-04-11T02:56:08Z ,,, <jeremy@JBingha02-L> # The function to insert node statuses needs orgified, turns out.
-policyfiles 2020-04-22T01:34:16Z Jeremy Bingham <jeremy@goiardi.gl> # add the policyfile migrations
+policies 2020-04-22T01:34:16Z Jeremy Bingham <jeremy@goiardi.gl> # add the policyfile migrations
 policy_revisions 2020-04-22T01:35:54Z Jeremy Bingham <jeremy@goiardi.gl> # and finally policy revisions
 policy_groups 2020-04-22T01:36:31Z Jeremy Bingham <jeremy@goiardi.gl> # policygroups are also a thing
