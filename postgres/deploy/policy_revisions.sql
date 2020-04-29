@@ -13,7 +13,7 @@ CREATE TABLE goiardi.policy_revisions (
 	solution_dependencies jsonb,
 	created_at TIMESTAMP WITH TIME ZONE NOT NULL,
 	PRIMARY KEY(id),
-	UNIQUE(revision_id),
+	UNIQUE(policy_id, revision_id),
 	FOREIGN KEY(policy_id)
 		REFERENCES goiardi.policies(id)
 		ON DELETE CASCADE
