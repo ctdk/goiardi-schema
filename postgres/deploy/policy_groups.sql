@@ -23,7 +23,7 @@ CREATE TABLE goiardi.policy_groups_to_policies (
 	created_at TIMESTAMP WITH TIME ZONE NOT NULL,
 	updated_at TIMESTAMP WITH TIME ZONE NOT NULL,
 	PRIMARY KEY(id),
-	UNIQUE(policy_id, pg_id),
+	UNIQUE(pg_id, policy_id),
 	FOREIGN KEY(policy_rev_id)
 		REFERENCES goiardi.policy_revisions(id)
 		ON DELETE CASCADE,
@@ -36,6 +36,33 @@ CREATE TABLE goiardi.policy_groups_to_policies (
 );
 
 CREATE INDEX pg_revision_id ON goiardi.policy_groups_to_policies(policy_id, policy_rev_id);
+
+-- Same caveat with this function as with merge_policies.
+CREATE OR REPLACE FUNCTION goiardi.merge_policy_groups(m_name text, m_organization_id bigint) RETURNS VOID AS
+$$
+BEGIN
+	INSERT INTO goiardi.policy_groups(name, organization_id, created_at, updated_at)
+		VALUES (m_name, m_organization_id, NOW(), NOW())
+		ON CONFLICT(organization_id, name)
+		DO UPDATE SET
+			updated_at = NOW();
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION goiardi.merge_policy_groups_to_policies(m_pg_id bigint, m_policy_id bigint, m_policy_rev_id bigint) RETURNS VOID AS
+$$
+BEGIN
+	INSERT INTO goiardi.policy_groups_to_policies
+		(pg_id, policy_id, policy_rev_id, created_at, updated_at)
+		VALUES (m_pg_id, m_policy_id, m_policy_rev_id, NOW(), NOW())
+		ON CONFLICT(pg_id, policy_id)
+		DO UPDATE SET
+			policy_rev_id = m_policy_rev_id,
+			updated_at = NOW();
+END;
+$$
+LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION goiardi.policy_group_updated_time() RETURNS TRIGGER AS
 $$

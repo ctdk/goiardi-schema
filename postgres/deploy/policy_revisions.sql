@@ -30,6 +30,7 @@ ALTER TABLE goiardi.policy_revisions ALTER override_attr SET STORAGE EXTERNAL;
 ALTER TABLE goiardi.policy_revisions ALTER solution_dependencies SET STORAGE EXTERNAL;
 
 CREATE INDEX revision_policy_id ON goiardi.policy_revisions(policy_id);
+CREATE INDEX revision_by_time ON goiardi.policy_revisions(created_at);
 
 CREATE TRIGGER goiardi_rev_policy_updated_time
 	AFTER INSERT OR UPDATE OR DELETE ON goiardi.policy_revisions

@@ -15,6 +15,22 @@ CREATE TABLE goiardi.policies (
 		ON DELETE RESTRICT
 );
 
+-- We need to save these things, after all
+-- NOTE, though: there's a trigger that should update the updated_at timestamp
+-- for us, so it would probably be better to make this a no-op on update.
+-- Make this a TODO, eh
+CREATE OR REPLACE FUNCTION goiardi.merge_policies(m_name text, m_organization_id bigint) RETURNS VOID AS
+$$
+BEGIN
+	INSERT INTO goiardi.policies(name, organization_id, created_at, updated_at)
+		VALUES (m_name, m_organization_id, NOW(), NOW())
+		ON CONFLICT(organization_id, name)
+		DO UPDATE SET
+			updated_at = NOW();
+END;
+$$
+LANGUAGE plpgsql;
+
 -- Only for the policy_revision trigger
 CREATE OR REPLACE FUNCTION goiardi.policy_updated_time() RETURNS TRIGGER AS
 $$
