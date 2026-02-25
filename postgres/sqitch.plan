@@ -80,3 +80,4 @@ orgify_node_status_insert 2020-04-11T02:56:08Z ,,, <jeremy@JBingha02-L> # The fu
 policies 2020-04-22T01:34:16Z Jeremy Bingham <jeremy@goiardi.gl> # add the policyfile migrations
 policy_revisions 2020-04-22T01:35:54Z Jeremy Bingham <jeremy@goiardi.gl> # and finally policy revisions
 policy_groups 2020-04-22T01:36:31Z Jeremy Bingham <jeremy@goiardi.gl> # policygroups are also a thing
+client_rename_orgs 2026-02-25T19:25:30Z Jeremy Bingham <jeremy@goiardi.gl> # renaming clients needs the org id passed in
