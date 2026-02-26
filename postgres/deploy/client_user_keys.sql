@@ -26,7 +26,7 @@ CREATE TABLE goiardi.user_keys (
 	created_at timestamp with time zone not null,
 	updated_at timestamp with time zone not null,
 	primary key(id),
-	unique(client_id, name)
+	unique(user_id, name)
 );
 
 COMMIT;
