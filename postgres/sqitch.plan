@@ -81,3 +81,4 @@ policies 2020-04-22T01:34:16Z Jeremy Bingham <jeremy@goiardi.gl> # add the polic
 policy_revisions 2020-04-22T01:35:54Z Jeremy Bingham <jeremy@goiardi.gl> # and finally policy revisions
 policy_groups 2020-04-22T01:36:31Z Jeremy Bingham <jeremy@goiardi.gl> # policygroups are also a thing
 client_rename_orgs 2026-02-25T19:25:30Z Jeremy Bingham <jeremy@goiardi.gl> # renaming clients needs the org id passed in
+client_user_keys 2026-02-26T01:34:19Z sqitch <sqitch@docker-desktop> # add tables for client and user public keys
