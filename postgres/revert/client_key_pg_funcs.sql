@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP FUNCTION IF EXISTS goiardi.merge_client_keys(m_name test, m_public_key text, m_expiration_date timestamp, m_client_id bigint);
+DROP FUNCTION IF EXISTS goiardi.merge_client_keys(m_name text, m_public_key text, m_expiration_date timestamp, m_client_id bigint);
 
 COMMIT;

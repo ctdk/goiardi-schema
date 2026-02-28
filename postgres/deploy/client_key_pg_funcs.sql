@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE OR REPLACE FUNCTION goiardi.merge_client_keys(m_name test, m_public_key text, m_expiration_date timestamp, m_client_id bigint) RETURNS BIGINT AS
+CREATE OR REPLACE FUNCTION goiardi.merge_client_keys(m_name text, m_public_key text, m_expiration_date timestamp, m_client_id bigint) RETURNS BIGINT AS
 $$
 DECLARE
     k_id bigint;
